@@ -22,7 +22,7 @@ final class FibonacciTest extends TestCase
     public function fibonacciProvider(): array
     {
         $data = [];
-        $list = [0, 1, 1, 2];
+        $list = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144];
         foreach ($list as $n => $number) {
             $data[] = [$n, $number];
         }
