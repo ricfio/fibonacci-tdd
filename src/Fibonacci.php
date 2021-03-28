@@ -8,6 +8,10 @@ final class Fibonacci
 {
     public static function f(int $n): int
     {
-        return 0;
+        if (0 == $n) {
+            return 0;
+        }
+
+        return 1;
     }
 }
