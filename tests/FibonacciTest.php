@@ -11,11 +11,22 @@ use PHPUnit\Framework\TestCase;
  */
 final class FibonacciTest extends TestCase
 {
-    public function testFirstValueIsZero()
+    private static $fibonacci;
+
+    public static function setUpBeforeClass(): void
     {
-        $fibonacci = new Fibonacci();
-        $actual = $fibonacci->next();
-        $expected = 0;
-        $this->assertEquals($expected, $actual);
+        self::$fibonacci = new Fibonacci();
+    }
+
+    public function testThe1stFibonacciNumberIsZero()
+    {
+        $actual = self::$fibonacci->next();
+        $this->assertSame(0, $actual);
+    }
+
+    public function testThe2ndFibonacciNumberIsOne()
+    {
+        $actual = self::$fibonacci->next();
+        $this->assertSame(1, $actual);
     }
 }
