@@ -11,7 +11,10 @@ final class Fibonacci
         if (0 == $n) {
             return 0;
         }
+        if (2 >= $n) {
+            return 1;
+        }
 
-        return 1;
+        return 2;
     }
 }
