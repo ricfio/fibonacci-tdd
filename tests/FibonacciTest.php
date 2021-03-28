@@ -11,9 +11,22 @@ use PHPUnit\Framework\TestCase;
  */
 final class FibonacciTest extends TestCase
 {
-    public function testFibonacci()
+    /**
+     * @dataProvider fibonacciProvider
+     */
+    public function testFibonacci(int $n, int $expected)
     {
-        $this->assertEquals(0, Fibonacci::f(0));
-        $this->assertEquals(1, Fibonacci::f(1));
+        $this->assertEquals($expected, Fibonacci::f($n));
+    }
+
+    public function fibonacciProvider(): array
+    {
+        $data = [];
+        $list = [0, 1, 1, 2];
+        foreach ($list as $n => $number) {
+            $data[] = [$n, $number];
+        }
+
+        return $data;
     }
 }
