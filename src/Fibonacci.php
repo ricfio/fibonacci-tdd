@@ -15,6 +15,6 @@ final class Fibonacci
             return 1;
         }
 
-        return self::f($n - 1) + 1;
+        return self::f($n - 1) + self::f($n - 2);
     }
 }
