@@ -15,13 +15,47 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
-		"php.validate.executablePath": "/usr/local/bin/php"
+
+		"[php]": {
+			"editor.defaultFormatter": "junstyle.php-cs-fixer",
+			"editor.formatOnSave": true
+		},
+		"php-cs-fixer.executablePath": "/tools/php-cs-fixer/vendor/bin/php-cs-fixer",
+		"php-cs-fixer.onsave": true,
+		"php-cs-fixer.rules": "@PhpCsFixer",
+		"php-cs-fixer.config": ".php_cs;.php_cs.dist",
+		"php-cs-fixer.allowRisky": false,
+		"php-cs-fixer.pathMode": "override",
+		"php-cs-fixer.exclude": [],
+		"php-cs-fixer.autoFixByBracket": true,
+		"php-cs-fixer.autoFixBySemicolon": false,
+		"php-cs-fixer.formatHtml": false,
+		"php-cs-fixer.documentFormattingProvider": true,
+
+		"editor.quickSuggestions": {
+			"comments": true
+		},
+		"php.suggest.basic": false,
+		"php.validate.executablePath": "/usr/local/bin/php",
+		"intelephense.files.exclude": [
+			"**/.git/**",
+			"**/.svn/**",
+			"**/.hg/**",
+			"**/CVS/**",
+			"**/.DS_Store/**",
+			"**/node_modules/**",
+			"**/bower_components/**",
+			"**/vendor/**/{Tests,tests}/**/*Test.php",
+			"**/.history/**",
+			"**/vendor/**/vendor/**"
+		],
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
 	"extensions": [
 		"felixfbecker.php-debug",
 		"bmewburn.vscode-intelephense-client",
+		"junstyle.php-cs-fixer",
 		"mrmlnc.vscode-apache"
 	],
 
