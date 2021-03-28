@@ -29,4 +29,10 @@ final class FibonacciTest extends TestCase
         $actual = self::$fibonacci->next();
         $this->assertSame(1, $actual);
     }
+
+    public function testThe3rdFibonacciNumberIsOne()
+    {
+        $actual = self::$fibonacci->next();
+        $this->assertSame(1, $actual);
+    }
 }
