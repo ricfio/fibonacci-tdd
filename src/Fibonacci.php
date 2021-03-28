@@ -8,13 +8,15 @@ final class Fibonacci
 {
     public static function f(int $n): int
     {
-        if (0 == $n) {
-            return 0;
-        }
-        if (1 == $n) {
-            return 1;
-        }
+        switch ($n) {
+            case 0:
+                return 0;
 
-        return self::f($n - 1) + self::f($n - 2);
+            case 1:
+                return 1;
+
+            default:
+                return self::f($n - 1) + self::f($n - 2);
+        }
     }
 }
