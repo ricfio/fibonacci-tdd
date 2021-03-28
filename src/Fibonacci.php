@@ -6,8 +6,18 @@ namespace App;
 
 final class Fibonacci
 {
+    /**
+     * Current index in the Fibonacci sequence.
+     */
+    private int $_current = 0;
+
     public function next(): int
     {
-        return 0;
+        $_current = $this->_current++;
+        if (0 == $_current) {
+            return 0;
+        }
+
+        return 1;
     }
 }
